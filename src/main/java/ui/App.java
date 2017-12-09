@@ -5,8 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
+
+import static javafx.scene.paint.Color.TRANSPARENT;
 
 public class App extends Application {
 
@@ -16,9 +19,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("main_screen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../resources/fxml/main_screen.fxml"));
+
+        Scene scene = new Scene(root);
+
         primaryStage.setTitle("QS Models");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(scene);
         primaryStage.show();
+        root.requestFocus();
     }
 }

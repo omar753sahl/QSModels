@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="465.0" prefWidth="286.0" spacing="20.0" style="-fx-background-color: #252525;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../qs_models_logo_150.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="25.0" top="25.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label alignment="CENTER" text="Pick one of the following" textFill="WHITE">
+               <font>
+                  <Font name="Lato Light" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton alignment="CENTER" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #111111;" text="M/M/1" textFill="WHITE">
+               <font>
+                  <Font name="Lato Medium" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" layoutX="76.0" layoutY="253.0" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #111111;" text="M/M/k" textFill="WHITE">
+               <font>
+                  <Font name="Lato Medium" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" layoutX="76.0" layoutY="320.0" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #111111;" text="M/M/c" textFill="WHITE">
+               <font>
+                  <Font name="Lato Medium" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" layoutX="76.0" layoutY="387.0" prefHeight="47.0" prefWidth="262.0" style="-fx-background-color: #111111;" text="M/M/c/k" textFill="WHITE">
+               <font>
+                  <Font name="Lato Medium" size="22.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+      </VBox>
+   </children>
+</StackPane>
