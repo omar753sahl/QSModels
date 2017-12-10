@@ -4,10 +4,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- * Created by Omar
- * Date: 09-Dec-17.
- */
 public class AbstractStage extends Stage {
     public AbstractStage() {
         super(StageStyle.DECORATED);
