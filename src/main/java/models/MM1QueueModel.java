@@ -7,7 +7,7 @@ package models;
 public class MM1QueueModel extends QueueModel {
 
     @Override
-    public PerformanceMetrics calculatePerformanceMetrics(double arrivalRate, double serviceRate) throws QueueModelException {
+    protected PerformanceMetrics calculatePerformanceMetrics(double arrivalRate, double serviceRate) throws QueueModelException {
         return null;
     }
 }

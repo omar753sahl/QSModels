@@ -13,6 +13,7 @@ import java.io.IOException;
 import static javafx.scene.paint.Color.TRANSPARENT;
 
 public class App extends Application {
+    private Stage window;
 
     public static void main(String[] args) {
         launch(args);
@@ -20,8 +21,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../../resources/fxml/main_screen.fxml"));
+        this.window = primaryStage;
 
+        Parent root = FXMLLoader.load(getClass().getResource("../../resources/fxml/main_screen.fxml"));
         Scene scene = new Scene(root);
 
         primaryStage.setTitle("QS Models");
@@ -29,5 +31,13 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         root.requestFocus();
+    }
+
+    public Stage getWindow() {
+        return window;
+    }
+
+    public void setScene(Scene scene) {
+        window.setScene(scene);
     }
 }
