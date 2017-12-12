@@ -13,7 +13,7 @@ import java.io.IOException;
 import static javafx.scene.paint.Color.TRANSPARENT;
 
 public class App extends Application {
-    private ScenesManager scenesManager;
+    private static ScenesManager scenesManager;
 
     public static void main(String[] args) {
         launch(args);
@@ -26,5 +26,9 @@ public class App extends Application {
 
         scenesManager = new ScenesManager(primaryStage);
         scenesManager.goToMainScreen();
+    }
+
+    public static ScenesManager getScenesManager() {
+        return scenesManager;
     }
 }

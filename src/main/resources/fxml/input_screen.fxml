@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="394.0" style="-fx-background-color: #252525;" stylesheets="@../css/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.InputScreenController">
+    <center>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+            <children>
+                <VBox alignment="CENTER" spacing="40.0" StackPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../qs_models_logo_150.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Enter the arrival and service rates" textFill="WHITE">
+                            <font>
+                                <Font name="Lato Light" size="21.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField focusColor="WHITE" labelFloat="true" promptText="Enter the arrival rate" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
+                            <font>
+                                <Font name="Lato Medium" size="16.0" />
+                            </font>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" labelFloat="true" promptText="Enter the arrival rate" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
+                            <font>
+                                <Font name="Lato Medium" size="16.0" />
+                            </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="subminButton" alignment="CENTER" onAction="#onSubmitClicked" prefHeight="42.0" prefWidth="327.0" style="-fx-background-color: #ffffffff;" text="SUBMIT" textAlignment="CENTER" textFill="#252525">
+                            <font>
+                                <Font name="Lato Medium" size="17.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="25.0" top="-25.0" />
+            </BorderPane.margin>
+        </StackPane>
+    </center>
+    <top>
+
+    </top>
+    <top>
+        <StackPane>
+            <children>
+                <JFXRippler styleClass="material_icon_rippler">
+                    <Label fx:id="backButton" alignment="CENTER" onMouseClicked="#onBackClicked" textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
+                        <graphic>
+                            <MaterialDesignIconView fill="WHITE" glyphName="ARROW_LEFT" size="32" />
+                        </graphic>
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <StackPane.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                    </StackPane.margin>
+                </JFXRippler>
+            </children>
+        </StackPane>
+    </top>
+</BorderPane>

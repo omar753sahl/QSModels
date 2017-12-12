@@ -2,12 +2,16 @@ package ui;
 
 import com.jfoenix.controls.JFXButton;
 import io.reactivex.Observable;
+import io.reactivex.Scheduler;
 import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import models.MM1QueueModel;
 import models.PerformanceMetrics;
 import models.QueueModelException;
+
+import java.io.IOException;
 
 public class MainScreenController {
 
@@ -32,7 +36,9 @@ public class MainScreenController {
     void onMm1Clicked(ActionEvent event) {
 //        MM1QueueModel model = new MM1QueueModel();
 //        Observable<PerformanceMetrics> metricsObservable = model.getPerformanceMetrics(0.3, 0.4);
-//        DisposableObserver<PerformanceMetrics> disposable = metricsObservable.subscribeWith(new DisposableObserver<PerformanceMetrics>() {
+//        DisposableObserver<PerformanceMetrics> disposable = metricsObservable
+//                .subscribeOn(Schedulers.computation())
+//                .observeOn().subscribeWith(new DisposableObserver<PerformanceMetrics>() {
 //            @Override
 //            public void onNext(PerformanceMetrics performanceMetrics) {
 //
@@ -53,7 +59,11 @@ public class MainScreenController {
 
     @FXML
     void onMmcClicked(ActionEvent event) {
-
+        try {
+            App.getScenesManager().goToNewScene("/fxml/input_screen.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

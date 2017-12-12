@@ -1,0 +1,5 @@
+.material_icon_rippler {
+    -jfx-rippler-recenter: true;
+    -jfx-rippler-fill: #656565;
+    -jfx-mask-type: CIRCLE;
+}
