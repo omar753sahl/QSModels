@@ -16,6 +16,7 @@ public class ScenesManager {
 
     public void goToNewScene(Scene scene) {
         window.setScene(scene);
+        window.sizeToScene();
         if (!window.isShowing()) {
             window.show();
         }
