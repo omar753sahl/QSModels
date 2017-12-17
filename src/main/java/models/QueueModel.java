@@ -1,6 +1,10 @@
 package models;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.functions.Consumer;
+import io.reactivex.observers.DisposableObserver;
 
 /**
  * Base class for all Queue Models
@@ -8,26 +12,26 @@ import io.reactivex.Observable;
 public abstract class QueueModel {
 
     /**
-     * Calls {@link #calculatePerformanceMetrics(double, double)} asynchronously by returning an {@link Observable}
+     * Calls {@link #calculatePerformanceMetrics(QueueSystemInput)} asynchronously by returning an {@link Observable}
      * which can be observed on a background thread.
      *
-     * @param arrivalRate: the arrival rate
-     * @param serviceRate: the service rate
+     * @param inputs: inputs to this queue.
      * @return an {@link Observable<PerformanceMetrics>}
      */
-    public Observable<PerformanceMetrics> getPerformanceMetrics(double arrivalRate, double serviceRate) {
-        Observable<PerformanceMetrics> observable = Observable.create(emitter -> {
+    public Observable<PerformanceMetrics> getPerformanceMetrics(QueueSystemInput inputs) {
+        return Observable.create(emitter -> {
             try {
-                PerformanceMetrics metrics = calculatePerformanceMetrics(arrivalRate, serviceRate);
+                validateQueueSystemInputs(inputs);
+                PerformanceMetrics metrics = calculatePerformanceMetrics(inputs);
                 emitter.onNext(metrics);
                 emitter.onComplete();
             } catch (QueueModelException e) {
                 emitter.onError(e);
             }
         });
-
-        return observable;
     }
 
-    protected abstract PerformanceMetrics calculatePerformanceMetrics(double arrivalRate, double serviceRate) throws QueueModelException;
+    protected abstract PerformanceMetrics calculatePerformanceMetrics(QueueSystemInput inputs) throws QueueModelException;
+
+    protected abstract void validateQueueSystemInputs(QueueSystemInput inputs) throws QueueModelException;
 }

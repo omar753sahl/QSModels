@@ -1,15 +1,9 @@
 package ui;
 
 import com.jfoenix.controls.JFXButton;
-import io.reactivex.Observable;
-import io.reactivex.Scheduler;
-import io.reactivex.observers.DisposableObserver;
-import io.reactivex.schedulers.Schedulers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import models.MM1QueueModel;
-import models.PerformanceMetrics;
-import models.QueueModelException;
+import models.QueueType;
 
 import java.io.IOException;
 
@@ -29,50 +23,26 @@ public class MainScreenController {
 
     @FXML
     public void initialize() {
-        System.out.println("Done loading FXML components!");
+        System.out.println("Done loading MainScreen components!");
     }
 
     @FXML
-    void onMm1Clicked(ActionEvent event) {
-//        MM1QueueModel model = new MM1QueueModel();
-//        Observable<PerformanceMetrics> metricsObservable = model.getPerformanceMetrics(0.3, 0.4);
-//        DisposableObserver<PerformanceMetrics> disposable = metricsObservable
-//                .subscribeOn(Schedulers.computation())
-//                .observeOn().subscribeWith(new DisposableObserver<PerformanceMetrics>() {
-//            @Override
-//            public void onNext(PerformanceMetrics performanceMetrics) {
-//
-//            }
-//
-//            @Override
-//            public void onError(Throwable e) {
-//
-//            }
-//
-//            @Override
-//            public void onComplete() {
-//
-//            }
-//        });
-//        disposable.dispose();
+    void onMm1Clicked(ActionEvent event) throws IOException {
+        App.getScenesManager().goToInputScreen(QueueType.MM1);
     }
 
     @FXML
-    void onMmcClicked(ActionEvent event) {
-        try {
-            App.getScenesManager().goToNewScene("/fxml/input_screen.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    void onMmcClicked(ActionEvent event) throws IOException {
+        App.getScenesManager().goToInputScreen(QueueType.MMC);
     }
 
     @FXML
-    void onMmckClicked(ActionEvent event) {
-
+    void onMmckClicked(ActionEvent event) throws IOException {
+        App.getScenesManager().goToInputScreen(QueueType.MMCK);
     }
 
     @FXML
-    void onMmkClicked(ActionEvent event) {
-
+    void onMmkClicked(ActionEvent event) throws IOException {
+        App.getScenesManager().goToInputScreen(QueueType.MMK);
     }
 }

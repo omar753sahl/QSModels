@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="394.0" style="-fx-background-color: #252525;" stylesheets="@../css/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.InputScreenController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="394.0" style="-fx-background-color: #252525;" stylesheets="@../css/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.InputScreenController">
     <center>
         <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
             <children>
@@ -29,17 +29,27 @@
                                 <Font name="Lato Light" size="21.0" />
                             </font>
                         </Label>
-                        <JFXTextField focusColor="WHITE" labelFloat="true" promptText="Enter the arrival rate" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
+                        <JFXTextField fx:id="arrivalRateField" focusColor="WHITE" labelFloat="true" promptText="Arrival rate (λ)" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
                             <font>
                                 <Font name="Lato Medium" size="16.0" />
                             </font>
                         </JFXTextField>
-                        <JFXTextField focusColor="WHITE" labelFloat="true" promptText="Enter the arrival rate" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
+                        <JFXTextField fx:id="serviceRateField" focusColor="WHITE" labelFloat="true" promptText="Service Rate (μ)" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
                             <font>
                                 <Font name="Lato Medium" size="16.0" />
                             </font>
                         </JFXTextField>
-                        <JFXButton fx:id="subminButton" alignment="CENTER" onAction="#onSubmitClicked" prefHeight="42.0" prefWidth="327.0" style="-fx-background-color: #ffffffff;" text="SUBMIT" textAlignment="CENTER" textFill="#252525">
+                  <JFXTextField fx:id="numberOfServersField" focusColor="WHITE" labelFloat="true" layoutX="25.0" layoutY="310.0" promptText="Number of servers (c)" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="Lato Medium" size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="systemCapacityField" focusColor="WHITE" labelFloat="true" layoutX="25.0" layoutY="388.0" promptText="System capacity (k)" style="-fx-prompt-text-fill: #b7b7b7; -fx-highlight-text-fill: #ffffffff; -fx-text-fill: #ffffffff; -fx-highlight-fill: #BA9EB0;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="Lato Medium" size="16.0" />
+                     </font>
+                  </JFXTextField>
+                        <JFXButton fx:id="submitButton" alignment="CENTER" onAction="#onSubmitClicked" prefHeight="42.0" prefWidth="327.0" style="-fx-background-color: #ffffffff;" text="SUBMIT" textAlignment="CENTER" textFill="#252525">
                             <font>
                                 <Font name="Lato Medium" size="17.0" />
                             </font>
