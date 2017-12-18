@@ -33,7 +33,7 @@
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="LLabel" layoutX="10.0" layoutY="118.0" text="0.6667" textFill="WHITE">
+                        <Label fx:id="labelL" layoutX="10.0" layoutY="118.0" text="0.6667" textFill="WHITE">
                            <font>
                               <Font name="Lato Semibold" size="32.0" />
                            </font>
@@ -52,7 +52,7 @@
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="LqLabel" layoutX="10.0" layoutY="118.0" text="0.5232" textFill="WHITE">
+                        <Label fx:id="labelLq" layoutX="10.0" layoutY="118.0" text="0.5232" textFill="WHITE">
                            <font>
                               <Font name="Lato Semibold" size="32.0" />
                            </font>
@@ -71,7 +71,7 @@
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="WLabel" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
+                        <Label fx:id="labelW" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
                            <font>
                               <Font name="Lato Semibold" size="32.0" />
                            </font>
@@ -90,7 +90,7 @@
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="LLabel111" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
+                        <Label fx:id="labelWq" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
                            <font>
                               <Font name="Lato Semibold" size="32.0" />
                            </font>
