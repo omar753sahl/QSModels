@@ -1,7 +1,5 @@
 package ui;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -12,34 +10,37 @@ import models.QueueType;
 import java.io.IOException;
 
 public class OutputScreenController {
-    public void initView(QueueType queueType, QueueSystemInput inputs) {
-        System.out.println("QueueType: " + queueType.name());
-        System.out.println(inputs);
-    }
+    private QueueType queueType;
+    private QueueSystemInput inputs;
 
     @FXML
     private BorderPane root;
 
     @FXML
-    private JFXTextField arrivalRateField;
+    private Label labelL;
 
     @FXML
-    private JFXTextField serviceRateField;
+    private Label labelLq;
 
     @FXML
-    private JFXTextField numberOfServersField;
+    private Label labelW;
 
     @FXML
-    private JFXTextField systemCapacityField;
-
-    @FXML
-    private JFXButton submitButton;
+    private Label labelWq;
 
     @FXML
     private Label backButton;
 
+    public void initView(QueueType queueType, QueueSystemInput inputs) {
+        this.queueType = queueType;
+        this.inputs = inputs;
+
+        System.out.println("QueueType: " + queueType.name());
+        System.out.println(inputs);
+    }
+
     @FXML
     void onBackClicked(MouseEvent event) throws IOException {
-        App.getScenesManager().goToMainScreen();
+        App.getScenesManager().goToInputScreen(queueType);
     }
 }
