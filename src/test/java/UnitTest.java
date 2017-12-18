@@ -1,6 +1,7 @@
 import io.reactivex.Observable;
 import io.reactivex.observers.DisposableObserver;
 import models.MM1KQueueModel;
+import models.MM1QueueModel;
 import models.PerformanceMetrics;
 import models.QueueSystemInput;
 import org.apache.commons.lang3.builder.ToStringExclude;
@@ -44,4 +45,26 @@ public class UnitTest {
         });
     }
 
+
+    @Test
+    public void testMM1QueueModel() {
+        MM1QueueModel model = new MM1QueueModel();
+        Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(50.0, 60.0, null, null));
+        ob.subscribeWith(new DisposableObserver<PerformanceMetrics>() {
+            @Override
+            public void onNext(PerformanceMetrics performanceMetrics) {
+                System.out.println(performanceMetrics);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onComplete() {
+                System.out.println("done!");
+            }
+        });
+    }
 }
