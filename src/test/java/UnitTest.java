@@ -86,4 +86,26 @@ public class UnitTest{
             }
         });
     }
+
+    @Test
+    public void testMMCQueueModel() {
+        MMCQueueModel model = new MMCQueueModel();
+        Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(0.1,  1 / 20.0,3, null));
+        ob.subscribeWith(new DisposableObserver<PerformanceMetrics>() {
+            @Override
+            public void onNext(PerformanceMetrics performanceMetrics) {
+                System.out.println(performanceMetrics);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onComplete() {
+                System.out.println("done!");
+            }
+        });
+    }
 }
