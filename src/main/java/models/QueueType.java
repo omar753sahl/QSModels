@@ -5,5 +5,5 @@ package models;
  * Date: 17-Dec-17.
  */
 public enum QueueType {
-    MM1, MMC, MMCK, MMK
+    DD1K, MM1, MMCK;
 }

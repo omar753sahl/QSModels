@@ -1,10 +1,6 @@
 package models;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.functions.Consumer;
-import io.reactivex.observers.DisposableObserver;
 
 /**
  * Base class for all Queue Models
@@ -12,26 +8,39 @@ import io.reactivex.observers.DisposableObserver;
 public abstract class QueueModel {
 
     /**
-     * Calls {@link #calculatePerformanceMetrics(QueueSystemInput)} asynchronously by returning an {@link Observable}
+     * Calls {@link #calculatePerformanceMetrics(double, double)} asynchronously by returning an {@link Observable}
      * which can be observed on a background thread.
      *
-     * @param inputs: inputs to this queue.
+     * @param input: the Queue System Input Variables
      * @return an {@link Observable<PerformanceMetrics>}
      */
-    public Observable<PerformanceMetrics> getPerformanceMetrics(QueueSystemInput inputs) {
-        return Observable.create(emitter -> {
+
+    //Calculation interface
+    public Observable<PerformanceMetrics> getPerformanceMetrics(QueueSystemInput input) {
+        Observable<PerformanceMetrics> observable = Observable.create(emitter -> {
             try {
-                validateQueueSystemInputs(inputs);
-                PerformanceMetrics metrics = calculatePerformanceMetrics(inputs);
+                validateQueueSystemInputs(input);
+                PerformanceMetrics metrics = calculatePerformanceMetrics(input);
                 emitter.onNext(metrics);
                 emitter.onComplete();
             } catch (QueueModelException e) {
                 emitter.onError(e);
             }
         });
+
+        return observable;
     }
 
-    protected abstract PerformanceMetrics calculatePerformanceMetrics(QueueSystemInput inputs) throws QueueModelException;
+    //Calculation
+    protected abstract PerformanceMetrics calculatePerformanceMetrics(QueueSystemInput input) throws QueueModelException;
 
-    protected abstract void validateQueueSystemInputs(QueueSystemInput inputs) throws QueueModelException;
+    //Input Validation
+    protected void validateQueueSystemInputs(QueueSystemInput inputs) throws QueueModelException {
+        if (inputs.getArrivalRate() == null) {
+            throw new QueueModelException("Arrival rate can't be null");
+        } else if (inputs.getServiceRate() == null) {
+            throw new QueueModelException("Service rate can't be null");
+        }
+    }
+
 }
