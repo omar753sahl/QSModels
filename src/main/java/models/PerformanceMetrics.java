@@ -34,4 +34,14 @@ public class PerformanceMetrics {
     public double getWq() {
         return Wq;
     }
+
+    @Override
+    public String toString() {
+        return "PerformanceMetrics{" +
+                "L=" + L +
+                ", Lq=" + Lq +
+                ", W=" + W +
+                ", Wq=" + Wq +
+                '}';
+    }
 }
