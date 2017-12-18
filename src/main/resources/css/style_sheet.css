@@ -1,0 +1,15 @@
+.material_icon_rippler {
+    -jfx-rippler-recenter: true;
+    -jfx-rippler-fill: #656565;
+    -jfx-mask-type: CIRCLE;
+}
+
+.jfx-snackbar-content {
+    -fx-background-color: WHITE;
+}
+.jfx-snackbar-toast {
+    -fx-text-fill: #252525;
+}
+.jfx-snackbar-action {
+    -fx-text-fill: #ff4081;
+}

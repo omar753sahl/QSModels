@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="394.0" style="-fx-background-color: #252525;" stylesheets="@../css/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.OutputScreenController">
+    <center>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+            <children>
+                <VBox alignment="CENTER" spacing="40.0" StackPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../qs_models_logo_150.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Nothing here yet" textFill="WHITE">
+                            <font>
+                                <Font name="Lato Light" size="21.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="15.0" right="15.0" />
+                    </padding>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="25.0" top="-25.0" />
+            </BorderPane.margin>
+        </StackPane>
+    </center>
+    <top>
+
+    </top>
+    <top>
+        <StackPane>
+            <children>
+                <JFXRippler styleClass="material_icon_rippler">
+                    <Label fx:id="backButton" alignment="CENTER" onMouseClicked="#onBackClicked" textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
+                        <graphic>
+                            <MaterialDesignIconView fill="WHITE" glyphName="ARROW_LEFT" size="32" />
+                        </graphic>
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <StackPane.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                    </StackPane.margin>
+                </JFXRippler>
+            </children>
+        </StackPane>
+    </top>
+</BorderPane>
