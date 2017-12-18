@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.DD1KOutputScreen"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="394.0" style="-fx-background-color: #252525;" stylesheets="@../css/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.DD1KOutputScreen">
+    <center>
+        <ScrollPane BorderPane.alignment="CENTER">
+            <content>
+                <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="543.0" prefWidth="392.0" spacing="12.0">
+                    <children>
+                        <Label alignment="CENTER" text="D/D/1/K Performance Metrics" textFill="WHITE">
+                            <font>
+                                <Font name="Lato Light" size="23.0" />
+                            </font>
+                     <padding>
+                        <Insets bottom="25.0" />
+                     </padding>
+                        </Label>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label alignment="CENTER" text="N(t)" textFill="WHITE">
+                                    <font>
+                                        <Font name="Lato Medium" size="28.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER" text="Average number of customers (entities) in the system." textFill="WHITE" wrapText="true">
+                                    <font>
+                                        <Font name="Lato Light" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="labelL" layoutX="10.0" layoutY="118.0" text="0.6667" textFill="WHITE">
+                                    <font>
+                                        <Font name="Lato Semibold" size="32.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="310.0">
+                            <children>
+                                <Label alignment="CENTER" text="Wq" textFill="WHITE">
+                                    <font>
+                                        <Font name="Lato Medium" size="28.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER" text="Average time it takes a customer to start being served." textFill="WHITE" wrapText="true">
+                                    <font>
+                                        <Font name="Lato Light" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="labelWq" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
+                                    <font>
+                                        <Font name="Lato Semibold" size="32.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets left="40.0" right="40.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <top>
 
-</AnchorPane>
+    </top>
+    <top>
+        <StackPane>
+            <children>
+                <JFXRippler styleClass="material_icon_rippler">
+                    <Label fx:id="backButton" alignment="CENTER" onMouseClicked="#onBackClicked" textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
+                        <graphic>
+                            <MaterialDesignIconView fill="WHITE" glyphName="ARROW_LEFT" size="32" />
+                        </graphic>
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <StackPane.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                    </StackPane.margin>
+                </JFXRippler>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+        </StackPane>
+    </top>
+</BorderPane>

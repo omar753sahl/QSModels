@@ -1,11 +1,8 @@
 import io.reactivex.Observable;
 import io.reactivex.observers.DisposableObserver;
-import models.MM1KQueueModel;
-import models.MM1QueueModel;
-import models.PerformanceMetrics;
-import models.QueueSystemInput;
-import org.apache.commons.lang3.builder.ToStringExclude;
+import models.*;
 import org.junit.Test;
+import org.junit.runners.JUnit4;
 import utils.MathUtils;
 
 /**
@@ -13,7 +10,7 @@ import utils.MathUtils;
  * Date: 17-Dec-17.
  */
 
-public class UnitTest {
+public class UnitTest{
     @Test
     public void testSomething() {
         try {
@@ -50,6 +47,28 @@ public class UnitTest {
     public void testMM1QueueModel() {
         MM1QueueModel model = new MM1QueueModel();
         Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(50.0, 60.0, null, null));
+        ob.subscribeWith(new DisposableObserver<PerformanceMetrics>() {
+            @Override
+            public void onNext(PerformanceMetrics performanceMetrics) {
+                System.out.println(performanceMetrics);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onComplete() {
+                System.out.println("done!");
+            }
+        });
+    }
+
+    @Test
+    public void testMMCKQueueModel() {
+        MMCKQueueModel model = new MMCKQueueModel();
+        Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(1.0,  1.0 / 6.0,3, 7));
         ob.subscribeWith(new DisposableObserver<PerformanceMetrics>() {
             @Override
             public void onNext(PerformanceMetrics performanceMetrics) {

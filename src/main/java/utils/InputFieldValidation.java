@@ -3,10 +3,6 @@ package utils;
 import com.jfoenix.validation.base.ValidatorBase;
 import javafx.scene.control.TextInputControl;
 
-/**
- * Created by Omar
- * Date: 17-Dec-17.
- */
 public class InputFieldValidation extends ValidatorBase {
     @Override
     protected void eval() {

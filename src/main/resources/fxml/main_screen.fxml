@@ -39,7 +39,7 @@
                         <Font name="Lato Medium" size="22.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="mmkButton" alignment="CENTER" layoutX="76.0" layoutY="253.0" onAction="#onMmkClicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="M/M/k" textFill="#252525">
+                <JFXButton fx:id="mmkButton" alignment="CENTER" layoutX="76.0" layoutY="253.0" onAction="#onMm1kClicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="M/M/k" textFill="#252525">
                     <font>
                         <Font name="Lato Medium" size="22.0" />
                     </font>

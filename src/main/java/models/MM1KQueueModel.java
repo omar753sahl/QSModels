@@ -2,10 +2,6 @@ package models;
 
 import static java.lang.Math.*;
 
-/**
- * Created by Omar
- * Date: 18-Dec-17.
- */
 public final class MM1KQueueModel extends QueueModel {
     @Override
     protected PerformanceMetrics calculatePerformanceMetrics(QueueSystemInput input) throws QueueModelException {
