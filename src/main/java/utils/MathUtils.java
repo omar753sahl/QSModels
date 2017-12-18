@@ -19,4 +19,31 @@ public final class MathUtils {
 
         return expression.evaluate();
     }
+
+
+    static long f[];
+    public static void prepareFact(int MX){
+        f = new long[MX + 1];
+        f[0] = 1;
+        for(int i = 1; i <= MX; ++i) f[i] = f[i - 1] * i;
+    }
+
+    //O(1) factorial query
+    public static long fact(int x){
+        return f[x];
+    }
+
+    //Binary exponentiation O(log2(exponent)) runtime
+    public static double pow(double base, int exponent){
+
+        double res = 1;
+
+        while(exponent != 0){
+            if((exponent & 1) == 1) res = res * base;
+            exponent /= 2;
+            base = base * base;
+        }
+
+        return res;
+    }
 }
