@@ -36,7 +36,7 @@ public final class MathUtils {
     //Binary exponentiation O(log2(exponent)) runtime
     public static double pow(double base, int exponent){
 
-        double res = 1;
+        double res = 1.0;
 
         boolean reversed = false;
 

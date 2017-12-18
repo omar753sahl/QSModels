@@ -1,8 +1,8 @@
 import io.reactivex.Observable;
 import io.reactivex.observers.DisposableObserver;
 import models.*;
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.junit.Test;
+import org.junit.runners.JUnit4;
 import utils.MathUtils;
 
 /**
@@ -10,7 +10,7 @@ import utils.MathUtils;
  * Date: 17-Dec-17.
  */
 
-public class UnitTest {
+public class UnitTest{
     @Test
     public void testSomething() {
         try {
@@ -68,7 +68,7 @@ public class UnitTest {
     @Test
     public void testMMCKQueueModel() {
         MMCKQueueModel model = new MMCKQueueModel();
-        Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(6.0 / 60.0, 1 / 20.0, 3, 7));
+        Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(5.0,  6.0, 2, 7));
         ob.subscribeWith(new DisposableObserver<PerformanceMetrics>() {
             @Override
             public void onNext(PerformanceMetrics performanceMetrics) {
