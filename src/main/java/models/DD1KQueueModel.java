@@ -16,17 +16,16 @@ public final class DD1KQueueModel extends QueueModel {
         isCase1 = input.getArrivalRate() > input.getServiceRate();
         isCase2 = input.getArrivalRate() <= input.getServiceRate();
 
-        if(isCase1 == isCase2) throw new QueueModelException("Cannot determine the queue case!");
+        if (isCase1 == isCase2) throw new QueueModelException("Cannot determine the queue case!");
 
         PerformanceMetrics result = new PerformanceMetrics();
 
-        if(isCase1){
+        if (isCase1) {
 
             Ti = fetchTi(input);
 //            double Wq = fetchWq(input, n);
 
-        }
-        else if(isCase2){
+        } else if (isCase2) {
 
         }
 
@@ -34,17 +33,17 @@ public final class DD1KQueueModel extends QueueModel {
     }
 
 
-    double fetchTi(QueueSystemInput input){
+    double fetchTi(QueueSystemInput input) {
 
         double LEFT_BOUND = 0.0, RIGHT_BOUND = Double.MAX_VALUE;
         double eps = 1e-9;
 
-        while((RIGHT_BOUND - LEFT_BOUND) > eps){
+        while ((RIGHT_BOUND - LEFT_BOUND) > eps) {
             double t = (LEFT_BOUND + RIGHT_BOUND) / 2;
 
             int cutomersInSystem = numberOfCustomers(input, t);
 
-            if(cutomersInSystem >= input.getSystemCapacity())
+            if (cutomersInSystem >= input.getSystemCapacity())
                 RIGHT_BOUND = t;
             else
                 LEFT_BOUND = t;
@@ -53,16 +52,16 @@ public final class DD1KQueueModel extends QueueModel {
         return Ti;
     }
 
-    int numberOfCustomers(QueueSystemInput input, double t){
-        if(Double.isNaN(Ti))
-            return (int)(input.getArrivalRate() * t) - (int)(input.getServiceRate() * t - input.getServiceRate() / input.getArrivalRate());
-        else{
+    int numberOfCustomers(QueueSystemInput input, double t) {
+        if (Double.isNaN(Ti))
+            return (int) (input.getArrivalRate() * t) - (int) (input.getServiceRate() * t - input.getServiceRate() / input.getArrivalRate());
+        else {
 
-            if(t <= 1 / input.getArrivalRate())
+            if (t <= 1 / input.getArrivalRate())
                 return M;
-            else if(t > 1 / input.getArrivalRate() && t <= Ti)
-                return (int)(input.getArrivalRate() * t) - (int)(input.getServiceRate() * t - input.getServiceRate() / input.getArrivalRate());
-            else{
+            else if (t > 1 / input.getArrivalRate() && t <= Ti)
+                return (int) (input.getArrivalRate() * t) - (int) (input.getServiceRate() * t - input.getServiceRate() / input.getArrivalRate());
+            else {
                 //t > Ti
                 //needs filling
                 //alternates between K - 1 / K - 2
@@ -71,15 +70,14 @@ public final class DD1KQueueModel extends QueueModel {
         }
     }
 
-    double fetchWq(QueueSystemInput input, int n){
+    double fetchWq(QueueSystemInput input, int n) {
 
-        if(n == 0) return 0;
+        if (n == 0) return 0;
 
-        if(n < (int)Ti * input.getArrivalRate()){
+        if (n < (int) Ti * input.getArrivalRate()) {
             return (1 / input.getServiceRate() - 1 / input.getArrivalRate()) * (n - 1);
-        }
-        else{
-            return (1 / input.getServiceRate() - 1 / input.getArrivalRate()) * (Ti*input.getArrivalRate() - 2);
+        } else {
+            return (1 / input.getServiceRate() - 1 / input.getArrivalRate()) * (Ti * input.getArrivalRate() - 2);
         }
     }
 

@@ -89,7 +89,7 @@ public class InputScreenController {
     }
 
     private void submit() throws Exception {
-        System.out.println("Whohooooooo inputs are valid");
+        System.out.println("Whoohooooo inputs are valid");
         Double arrivalRate = MathUtils.eval(arrivalRateField.getText());
         Double serviceRate = MathUtils.eval(serviceRateField.getText());
 
