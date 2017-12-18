@@ -16,14 +16,17 @@
             <content>
                 <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="543.0" prefWidth="392.0" spacing="12.0">
                     <children>
-                        <Label alignment="CENTER" text="Queue Performance Metrics" textFill="WHITE">
+                        <Label alignment="CENTER" text="D/D/1/K Performance Metrics" textFill="WHITE">
                             <font>
                                 <Font name="Lato Light" size="23.0" />
                             </font>
+                     <padding>
+                        <Insets bottom="25.0" />
+                     </padding>
                         </Label>
                         <VBox alignment="CENTER_LEFT">
                             <children>
-                                <Label alignment="CENTER" text="L" textFill="WHITE">
+                                <Label alignment="CENTER" text="N(t)" textFill="WHITE">
                                     <font>
                                         <Font name="Lato Medium" size="28.0" />
                                     </font>
@@ -34,44 +37,6 @@
                                     </font>
                                 </Label>
                                 <Label fx:id="labelL" layoutX="10.0" layoutY="118.0" text="0.6667" textFill="WHITE">
-                                    <font>
-                                        <Font name="Lato Semibold" size="32.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="52.0">
-                            <children>
-                                <Label alignment="CENTER" text="Lq" textFill="WHITE">
-                                    <font>
-                                        <Font name="Lato Medium" size="28.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" text="Average number of customers (entities) in the queue." textFill="WHITE" wrapText="true">
-                                    <font>
-                                        <Font name="Lato Light" size="15.0" />
-                                    </font>
-                                </Label>
-                                <Label fx:id="labelLq" layoutX="10.0" layoutY="118.0" text="0.5232" textFill="WHITE">
-                                    <font>
-                                        <Font name="Lato Semibold" size="32.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="181.0">
-                            <children>
-                                <Label alignment="CENTER" text="W" textFill="WHITE">
-                                    <font>
-                                        <Font name="Lato Medium" size="28.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" text="Average time spent by a customer from arrival until fully served." textFill="WHITE" wrapText="true">
-                                    <font>
-                                        <Font name="Lato Light" size="15.0" />
-                                    </font>
-                                </Label>
-                                <Label fx:id="labelW" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
                                     <font>
                                         <Font name="Lato Semibold" size="32.0" />
                                     </font>
