@@ -9,62 +9,55 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0"
-           prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="ui.MainScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainScreenController">
     <children>
-        <VBox alignment="TOP_CENTER" prefHeight="465.0" prefWidth="286.0" spacing="25.0"
-              style="-fx-background-color: #252525;">
+        <VBox alignment="TOP_CENTER" spacing="25.0" style="-fx-background-color: #252525;" StackPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="150.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../qs_models_logo_150.png"/>
+                        <Image url="@../qs_models_logo_150.png" />
                     </image>
                     <VBox.margin>
-                        <Insets bottom="15.0" top="25.0"/>
+                        <Insets bottom="20.0" top="20.0" />
                     </VBox.margin>
                 </ImageView>
                 <Label alignment="CENTER" text="Pick one of the following" textFill="WHITE">
                     <font>
-                        <Font name="Lato Light" size="24.0"/>
+                        <Font name="Lato Light" size="24.0" />
                     </font>
                     <VBox.margin>
-                        <Insets bottom="10.0"/>
+                        <Insets bottom="10.0" />
                     </VBox.margin>
                 </Label>
-                <JFXButton fx:id="mm1Button" alignment="CENTER" onAction="#onMm1Clicked" prefHeight="47.0"
-                           prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="M/M/1"
-                           textFill="#252525">
+            <JFXButton fx:id="dd1kButton" alignment="CENTER" layoutX="76.0" layoutY="256.0" onAction="#onDd1kClicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="D/D/1/K" textFill="#252525">
+               <font>
+                  <Font name="Lato Medium" size="22.0" />
+               </font>
+            </JFXButton>
+                <JFXButton fx:id="mm1Button" alignment="CENTER" onAction="#onMm1Clicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="M/M/1" textFill="#252525">
                     <font>
-                        <Font name="Lato Medium" size="22.0"/>
+                        <Font name="Lato Medium" size="22.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="mmkButton" alignment="CENTER" layoutX="76.0" layoutY="253.0" onAction="#onMmkClicked"
-                           prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010"
-                           style="-fx-background-color: #ffffffff;" text="M/M/k" textFill="#252525">
+                <JFXButton fx:id="mmkButton" alignment="CENTER" layoutX="76.0" layoutY="253.0" onAction="#onMmkClicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="M/M/k" textFill="#252525">
                     <font>
-                        <Font name="Lato Medium" size="22.0"/>
+                        <Font name="Lato Medium" size="22.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="mmcButton" alignment="CENTER" layoutX="76.0" layoutY="320.0" onAction="#onMmcClicked"
-                           prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010"
-                           style="-fx-background-color: #ffffffff;" text="M/M/c" textFill="#252525">
+                <JFXButton fx:id="mmcButton" alignment="CENTER" layoutX="76.0" layoutY="320.0" onAction="#onMmcClicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="M/M/c" textFill="#252525">
                     <font>
-                        <Font name="Lato Medium" size="22.0"/>
+                        <Font name="Lato Medium" size="22.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="mmckButton" alignment="CENTER" layoutX="76.0" layoutY="387.0"
-                           onAction="#onMmckClicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010"
-                           style="-fx-background-color: #ffffffff;" text="M/M/c/k" textAlignment="CENTER"
-                           textFill="#252525">
+                <JFXButton fx:id="mmckButton" alignment="CENTER" layoutX="76.0" layoutY="387.0" onAction="#onMmckClicked" prefHeight="47.0" prefWidth="262.0" ripplerFill="#101010" style="-fx-background-color: #ffffffff;" text="M/M/c/k" textAlignment="CENTER" textFill="#252525">
                     <font>
-                        <Font name="Lato Medium" size="22.0"/>
+                        <Font name="Lato Medium" size="22.0" />
                     </font>
                 </JFXButton>
 
             </children>
             <padding>
-                <Insets top="25.0"/>
+                <Insets top="25.0" />
             </padding>
         </VBox>
     </children>

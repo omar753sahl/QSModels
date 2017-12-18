@@ -27,6 +27,11 @@ public class MainScreenController {
     }
 
     @FXML
+    void onDd1kClicked(ActionEvent event) {
+
+    }
+
+    @FXML
     void onMm1Clicked(ActionEvent event) throws IOException {
         App.getScenesManager().goToInputScreen(QueueType.MM1);
     }
