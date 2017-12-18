@@ -54,7 +54,7 @@ public class InputScreenController {
                 showSystemCapacity = false;
                 showNumberOfServers = true;
                 break;
-            case MMK:
+            case MM1K:
                 showSystemCapacity = true;
                 showNumberOfServers = false;
                 break;

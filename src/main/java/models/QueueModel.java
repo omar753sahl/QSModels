@@ -8,7 +8,7 @@ import io.reactivex.Observable;
 public abstract class QueueModel {
 
     /**
-     * Calls {@link #calculatePerformanceMetrics(double, double)} asynchronously by returning an {@link Observable}
+     * Calls {@link #calculatePerformanceMetrics(QueueSystemInput)} asynchronously by returning an {@link Observable}
      * which can be observed on a background thread.
      *
      * @param input: the Queue System Input Variables

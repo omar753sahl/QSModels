@@ -9,7 +9,9 @@ public class PerformanceMetrics {
     private double W;
     private double Wq;
 
-    public PerformanceMetrics(){};
+    public PerformanceMetrics() {
+    }
+
     public PerformanceMetrics(double l, double lq, double w, double wq) {
         L = l;
         Lq = lq;
