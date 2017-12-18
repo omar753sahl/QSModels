@@ -68,7 +68,7 @@ public class UnitTest{
     @Test
     public void testMMCKQueueModel() {
         MMCKQueueModel model = new MMCKQueueModel();
-        Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(5.0,  6.0, 2, 7));
+        Observable<PerformanceMetrics> ob = model.getPerformanceMetrics(new QueueSystemInput(1.0,  1.0 / 6.0,3, 7));
         ob.subscribeWith(new DisposableObserver<PerformanceMetrics>() {
             @Override
             public void onNext(PerformanceMetrics performanceMetrics) {
