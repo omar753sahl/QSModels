@@ -68,6 +68,8 @@ public class MMCKQueueModel extends QueueModel{
         return new PerformanceMetrics(L, Lq, W, Wq);
     }
 
+
+    //Calculates P(n)
     double getP(int n){
 
         double P = Double.NaN;
@@ -82,6 +84,7 @@ public class MMCKQueueModel extends QueueModel{
         return P;
     }
 
+    //Calculates P(0)
     double getP0(){
 
         double P0_inv = 0.0;
