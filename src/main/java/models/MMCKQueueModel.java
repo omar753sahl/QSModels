@@ -28,7 +28,6 @@ public final class MMCKQueueModel extends QueueModel {
 
         double L, Lq, W, Wq;
 
-
         //Lambda(dash) calculation
         {
             lambdaDash = lambda * (1 - getP(K));
@@ -49,7 +48,7 @@ public final class MMCKQueueModel extends QueueModel {
 
             double neg = 0;
             for (int n = 0; n <= C - 1; ++n) {
-                neg += (C - n) * pow(r, n) / fact(n);
+                neg += ((C - n) * pow(r, n)) / fact(n);
             }
 
             L -= P0 * neg;
@@ -75,9 +74,9 @@ public final class MMCKQueueModel extends QueueModel {
         double P = Double.NaN;
 
         if (n >= 0 && n < C) {
-            P = pow(r, n) / fact(n) * P0;
+            P = (pow(r, n) / fact(n)) * P0;
         } else if (n >= C && n <= K) {
-            P = pow(r, n) / (pow(C, n - C) * fact(C)) * P0;
+            P = (pow(r, n) / (pow(C, n - C) * fact(C))) * P0;
         }
 
         return P;
@@ -88,18 +87,21 @@ public final class MMCKQueueModel extends QueueModel {
 
         double P0_inv = 0.0;
 
-        MathUtils.prepareFact(C);
+        MathUtils.prepareFact(Math.max(C, K));
 
-        if (rho == 1) {
+        if (rho == 1.0) {
 
             for (int n = 0; n <= C - 1; ++n) {
-                P0_inv += (pow(r, n) / fact(n)) + (pow(r, C) / fact(C) * (K - C + 1));
+                P0_inv += (pow(r, n) / fact(n));
             }
+            P0_inv += (pow(r, C) / fact(C)) * (K - C + 1);
+
         } else {
 
             for (int n = 0; n <= C - 1; ++n) {
-                P0_inv += (pow(r, n) / fact(n)) + (pow(r, C) / fact(C) * ((1 - pow(rho, K - C + 1)) / (1 - rho)));
+                P0_inv += (pow(r, n) / fact(n));
             }
+            P0_inv += (pow(r, C) / fact(C)) * ((1 - pow(rho, K - C + 1)) / (1 - rho));
         }
 
         return 1 / P0_inv;
