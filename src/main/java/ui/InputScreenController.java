@@ -78,11 +78,6 @@ public class InputScreenController {
     }
 
     @FXML
-    public void initialize() {
-        System.out.println("Done loading InputScreen components!");
-    }
-
-    @FXML
     void onBackClicked(MouseEvent event) throws IOException {
         App.getScenesManager().goToMainScreen();
     }

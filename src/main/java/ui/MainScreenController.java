@@ -22,11 +22,6 @@ public class MainScreenController {
     private JFXButton mmckButton;
 
     @FXML
-    public void initialize() {
-        System.out.println("Done loading MainScreen components!");
-    }
-
-    @FXML
     void onDd1kClicked(ActionEvent event) {
 
     }
