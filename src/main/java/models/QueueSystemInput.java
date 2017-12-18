@@ -6,11 +6,11 @@ import io.reactivex.annotations.Nullable;
 public class QueueSystemInput {
     private Double arrivalRate;
     private Double serviceRate;
-    private int numberOfServers;
-    private int systemCapacity;
+    private Integer numberOfServers;
+    private Integer systemCapacity;
 
     public QueueSystemInput(@NonNull Double arrivalRate, @NonNull Double serviceRate,
-                            @Nullable int numberOfServers, @Nullable int systemCapacity) {
+                            @Nullable Integer numberOfServers, @Nullable Integer systemCapacity) {
         this.arrivalRate = arrivalRate;
         this.serviceRate = serviceRate;
         this.numberOfServers = numberOfServers;
@@ -25,11 +25,11 @@ public class QueueSystemInput {
         return serviceRate;
     }
 
-    public int getNumberOfServers() {
+    public Integer getNumberOfServers() {
         return numberOfServers;
     }
 
-    public int getSystemCapacity() {
+    public Integer getSystemCapacity() {
         return systemCapacity;
     }
 
