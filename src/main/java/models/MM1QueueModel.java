@@ -1,6 +1,6 @@
 package models;
 
-public class MM1QueueModel extends QueueModel{
+public final class MM1QueueModel extends QueueModel{
 
     @Override
     protected PerformanceMetrics calculatePerformanceMetrics(QueueSystemInput input) throws QueueModelException {

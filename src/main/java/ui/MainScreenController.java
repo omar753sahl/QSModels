@@ -42,7 +42,7 @@ public class MainScreenController {
     }
 
     @FXML
-    void onMmkClicked(ActionEvent event) throws IOException {
-        App.getScenesManager().goToInputScreen(QueueType.MMK);
+    void onMm1kClicked(ActionEvent event) throws IOException {
+        App.getScenesManager().goToInputScreen(QueueType.MM1K);
     }
 }
