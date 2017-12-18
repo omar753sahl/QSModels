@@ -98,15 +98,15 @@ public class InputScreenController {
         Double arrivalRate = MathUtils.eval(arrivalRateField.getText());
         Double serviceRate = MathUtils.eval(serviceRateField.getText());
 
-        Double numberOfServers = null;
-        Double systemCapacity = null;
+        Integer numberOfServers = null;
+        Integer systemCapacity = null;
 
         if (showNumberOfServers) {
-            numberOfServers = MathUtils.eval(numberOfServersField.getText());
+            numberOfServers = MathUtils.eval(numberOfServersField.getText()).intValue();
         }
 
         if (showSystemCapacity) {
-            systemCapacity = MathUtils.eval(systemCapacityField.getText());
+            systemCapacity = MathUtils.eval(systemCapacityField.getText()).intValue();
         }
 
         QueueSystemInput inputs = new QueueSystemInput(arrivalRate, serviceRate, numberOfServers, systemCapacity);
