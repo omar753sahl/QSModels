@@ -10,32 +10,32 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #252525;" stylesheets="@../css/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.OutputScreenController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="394.0" style="-fx-background-color: #252525;" stylesheets="@../css/style_sheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.OutputScreenController">
     <center>
       <ScrollPane BorderPane.alignment="CENTER">
          <content>
-                <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="543.0" prefWidth="392.0" spacing="15.0">
+                <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="543.0" prefWidth="392.0" spacing="12.0">
                     <children>
-                        <Label alignment="CENTER" text="Queue performance metrics" textFill="WHITE">
+                        <Label alignment="CENTER" text="Queue Performance Metrics" textFill="WHITE">
                             <font>
-                                <Font name="Lato Medium" size="21.0" />
+                                <Font name="Lato Light" size="23.0" />
                             </font>
                         </Label>
                   <VBox alignment="CENTER_LEFT">
                      <children>
                         <Label alignment="CENTER" text="L" textFill="WHITE">
                            <font>
-                              <Font name="Lato Semibold" size="28.0" />
+                              <Font name="Lato Medium" size="28.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefWidth="270.0" text="Average number of customers in the system" textFill="WHITE" wrapText="true">
+                        <Label alignment="CENTER" text="Average number of customers (entities) in the system." textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="LLabel" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
+                        <Label fx:id="LLabel" layoutX="10.0" layoutY="118.0" text="0.6667" textFill="WHITE">
                            <font>
-                              <Font name="Lato Black" size="32.0" />
+                              <Font name="Lato Semibold" size="32.0" />
                            </font>
                         </Label>
                      </children>
@@ -44,17 +44,17 @@
                      <children>
                         <Label alignment="CENTER" text="Lq" textFill="WHITE">
                            <font>
-                              <Font name="Lato Semibold" size="28.0" />
+                              <Font name="Lato Medium" size="28.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefWidth="270.0" text="Average number of customers in the system" textFill="WHITE" wrapText="true">
+                        <Label alignment="CENTER" text="Average number of customers (entities) in the queue." textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="LqLabel" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
+                        <Label fx:id="LqLabel" layoutX="10.0" layoutY="118.0" text="0.5232" textFill="WHITE">
                            <font>
-                              <Font name="Lato Black" size="32.0" />
+                              <Font name="Lato Semibold" size="32.0" />
                            </font>
                         </Label>
                      </children>
@@ -63,17 +63,17 @@
                      <children>
                         <Label alignment="CENTER" text="W" textFill="WHITE">
                            <font>
-                              <Font name="Lato Semibold" size="28.0" />
+                              <Font name="Lato Medium" size="28.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefWidth="270.0" text="Average number of customers in the system" textFill="WHITE" wrapText="true">
+                        <Label alignment="CENTER" text="Average time spent by a customer from arrival until fully served." textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="WLabel" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
                            <font>
-                              <Font name="Lato Black" size="32.0" />
+                              <Font name="Lato Semibold" size="32.0" />
                            </font>
                         </Label>
                      </children>
@@ -82,24 +82,24 @@
                      <children>
                         <Label alignment="CENTER" text="Wq" textFill="WHITE">
                            <font>
-                              <Font name="Lato Semibold" size="28.0" />
+                              <Font name="Lato Medium" size="28.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefWidth="270.0" text="Average number of customers in the system" textFill="WHITE" wrapText="true">
+                        <Label alignment="CENTER" text="Average time it takes a customer to start being served." textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="Lato Light" size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="LLabel111" layoutX="10.0" layoutY="118.0" text="3.3333 " textFill="WHITE">
                            <font>
-                              <Font name="Lato Black" size="32.0" />
+                              <Font name="Lato Semibold" size="32.0" />
                            </font>
                         </Label>
                      </children>
                   </VBox>
                     </children>
                     <padding>
-                        <Insets left="20.0" right="20.0" />
+                        <Insets left="40.0" right="40.0" />
                     </padding>
                 </VBox>
          </content>

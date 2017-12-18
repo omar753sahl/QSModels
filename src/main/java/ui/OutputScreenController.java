@@ -12,7 +12,15 @@ import models.QueueType;
 import java.io.IOException;
 
 public class OutputScreenController {
+
+
+    private QueueType queueType;
+    private QueueSystemInput inputs;
+
     public void initView(QueueType queueType, QueueSystemInput inputs) {
+        this.queueType = queueType;
+        this.inputs = inputs;
+
         System.out.println("QueueType: " + queueType.name());
         System.out.println(inputs);
     }
@@ -40,6 +48,6 @@ public class OutputScreenController {
 
     @FXML
     void onBackClicked(MouseEvent event) throws IOException {
-        App.getScenesManager().goToMainScreen();
+        App.getScenesManager().goToInputScreen(queueType);
     }
 }
