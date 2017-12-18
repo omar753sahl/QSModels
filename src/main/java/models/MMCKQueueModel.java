@@ -5,10 +5,10 @@ import utils.MathUtils;
 import static utils.MathUtils.fact;
 import static utils.MathUtils.pow;
 
-public class MMCKQueueModel extends QueueModel{
+public final class MMCKQueueModel extends QueueModel {
 
-    double lambda, lambdaDash, mue, r, rho, P0;
-    int servers, capacity, C, K;
+    private double lambda, lambdaDash, mue, r, rho, P0;
+    private int servers, capacity, C, K;
 
     @Override
     protected PerformanceMetrics calculatePerformanceMetrics(QueueSystemInput input) throws QueueModelException {
@@ -37,7 +37,7 @@ public class MMCKQueueModel extends QueueModel{
         //Lq calculation
         {
             Lq = 0.0;
-            for(int n = C + 1; n <= K; ++n){
+            for (int n = C + 1; n <= K; ++n) {
                 double Pn = getP(n);
                 Lq += (n - C) * Pn;
             }
@@ -48,7 +48,7 @@ public class MMCKQueueModel extends QueueModel{
             L = Lq + C;
 
             double neg = 0;
-            for(int n = 0; n <= C - 1; ++n){
+            for (int n = 0; n <= C - 1; ++n) {
                 neg += (C - n) * pow(r, n) / fact(n);
             }
 
@@ -70,14 +70,13 @@ public class MMCKQueueModel extends QueueModel{
 
 
     //Calculates P(n)
-    double getP(int n){
+    double getP(int n) {
 
         double P = Double.NaN;
 
-        if(n >= 0 && n < C){
+        if (n >= 0 && n < C) {
             P = pow(r, n) / fact(n) * P0;
-        }
-        else if(n >= C && n <= K){
+        } else if (n >= C && n <= K) {
             P = pow(r, n) / (pow(C, n - C) * fact(C)) * P0;
         }
 
@@ -85,25 +84,24 @@ public class MMCKQueueModel extends QueueModel{
     }
 
     //Calculates P(0)
-    double getP0(){
+    double getP0() {
 
         double P0_inv = 0.0;
 
         MathUtils.prepareFact(C);
 
-        if(rho == 1){
+        if (rho == 1) {
 
-            for(int n = 0; n <= C - 1; ++n){
+            for (int n = 0; n <= C - 1; ++n) {
                 P0_inv += (pow(r, n) / fact(n)) + (pow(r, C) / fact(C) * (K - C + 1));
             }
-        }
-        else{
+        } else {
 
-            for(int n = 0; n <= C - 1; ++n){
+            for (int n = 0; n <= C - 1; ++n) {
                 P0_inv += (pow(r, n) / fact(n)) + (pow(r, C) / fact(C) * ((1 - pow(rho, K - C + 1)) / (1 - rho)));
             }
         }
 
-        return  1 / P0_inv;
+        return 1 / P0_inv;
     }
 }
