@@ -38,12 +38,19 @@ public final class MathUtils {
 
         double res = 1;
 
+        boolean reversed = false;
+
+        if(exponent < 0){
+            reversed = true;
+            exponent *= -1;
+        }
+
         while(exponent != 0){
             if((exponent & 1) == 1) res = res * base;
             exponent /= 2;
             base = base * base;
         }
 
-        return res;
+        return reversed ? 1 / res : res;
     }
 }
