@@ -21,8 +21,8 @@ public abstract class QueueModel {
         return Observable.create(emitter -> {
             try {
                 validateQueueSystemInputs(input);
-                Thread.sleep(3000);
                 PerformanceMetrics metrics = calculatePerformanceMetrics(input);
+                Thread.sleep(1500);
                 emitter.onNext(metrics);
                 emitter.onComplete();
             } catch (QueueModelException e) {
