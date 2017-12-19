@@ -108,14 +108,14 @@ public class OutputScreenController {
 
     private void bindOutputToView(PerformanceMetrics metrics) {
         System.out.println("metrics for this '" + queueType + "' are: " + metrics.toString());
-        labelL.setText(formatOutput(4, metrics.getL()));
-        labelLq.setText(formatOutput(4, metrics.getLq()));
-        labelW.setText(formatOutput(4, metrics.getW()));
-        labelWq.setText(formatOutput(4, metrics.getWq()));
+        labelL.setText(formatOutput(metrics.getL()));
+        labelLq.setText(formatOutput(metrics.getLq()));
+        labelW.setText(formatOutput(metrics.getW()));
+        labelWq.setText(formatOutput(metrics.getWq()));
     }
 
-    private String formatOutput(int decimalPlaces, double value) {
-        return String.format("%." + decimalPlaces + "f", value);
+    private String formatOutput(double value) {
+        return String.format("%.3g", value);
     }
 
     private void hideProgressBar() {

@@ -41,4 +41,12 @@ public class MMCQueueModel extends QueueModel {
 
         return 1 / result;
     }
+
+    @Override
+    protected void validateQueueSystemInputs(QueueSystemInput inputs) throws QueueModelException {
+        super.validateQueueSystemInputs(inputs);
+        if (inputs.getNumberOfServers() == null) {
+            throw new QueueModelException("Number of servers can't be null");
+        }
+    }
 }

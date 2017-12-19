@@ -71,7 +71,6 @@ public final class DD1KQueueModel extends QueueModel {
     }
 
     double fetchWq(QueueSystemInput input, int n) {
-
         if (n == 0) return 0;
 
         if (n < (int) Ti * input.getArrivalRate()) {

@@ -5,7 +5,6 @@ import static java.lang.Math.*;
 public final class MM1KQueueModel extends QueueModel {
     @Override
     protected PerformanceMetrics calculatePerformanceMetrics(QueueSystemInput input) throws QueueModelException {
-
         double lambda = input.getArrivalRate();
         double mu = input.getServiceRate();
         double k = input.getSystemCapacity();

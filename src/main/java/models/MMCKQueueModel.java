@@ -106,4 +106,15 @@ public final class MMCKQueueModel extends QueueModel {
 
         return 1 / P0_inv;
     }
+
+    @Override
+    protected void validateQueueSystemInputs(QueueSystemInput inputs) throws QueueModelException {
+        super.validateQueueSystemInputs(inputs);
+        if (inputs.getSystemCapacity() == null) {
+            throw new QueueModelException("System capacity can't be null");
+        }
+        if (inputs.getNumberOfServers() == null) {
+            throw new QueueModelException("Number of servers can't be null");
+        }
+    }
 }
