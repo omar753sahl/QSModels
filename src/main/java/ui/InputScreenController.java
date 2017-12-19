@@ -15,6 +15,7 @@ import utils.TextUtils;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class InputScreenController {
     @FXML
@@ -36,16 +37,22 @@ public class InputScreenController {
     private JFXButton submitButton;
 
     @FXML
+    private Label inputScreenTitle;
+
+    @FXML
     private Label backButton;
 
     private QueueType queueType;
     private boolean showSystemCapacity;
     private boolean showNumberOfServers;
 
-    public void initView(QueueType queueName) {
-        this.queueType = queueName;
+    public void initView(QueueType queueType) {
+        this.queueType = queueType;
 
-        switch (queueName) {
+        String title = Arrays.stream(queueType.name().split("")).collect(Collectors.joining("/"));
+        inputScreenTitle.setText(title);
+
+        switch (queueType) {
             case MM1:
                 showSystemCapacity = false;
                 showNumberOfServers = false;

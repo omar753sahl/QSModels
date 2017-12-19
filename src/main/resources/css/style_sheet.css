@@ -21,3 +21,7 @@
 .scroll-pane {
     -fx-background-color: transparent;
 }
+
+.jfx-spinner:indeterminate .arc {
+    -fx-stroke: WHITE;
+}

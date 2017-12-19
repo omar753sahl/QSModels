@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXSpinner?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -130,4 +131,14 @@
          </BorderPane.margin>
         </StackPane>
     </top>
+   <bottom>
+      <StackPane fx:id="progressBarContainer" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+         <children>
+            <JFXSpinner fx:id="progressBar" radius="10.0" startingAngle="200.0" />
+         </children>
+      </StackPane>
+   </bottom>
 </BorderPane>

@@ -17,9 +17,11 @@ public abstract class QueueModel {
 
     //Calculation interface
     public Observable<PerformanceMetrics> getPerformanceMetrics(QueueSystemInput input) {
-        Observable<PerformanceMetrics> observable = Observable.create(emitter -> {
+
+        return Observable.create(emitter -> {
             try {
                 validateQueueSystemInputs(input);
+                Thread.sleep(3000);
                 PerformanceMetrics metrics = calculatePerformanceMetrics(input);
                 emitter.onNext(metrics);
                 emitter.onComplete();
@@ -27,8 +29,6 @@ public abstract class QueueModel {
                 emitter.onError(e);
             }
         });
-
-        return observable;
     }
 
     //Calculation
