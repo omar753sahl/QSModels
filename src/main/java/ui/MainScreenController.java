@@ -10,6 +10,9 @@ import java.io.IOException;
 public class MainScreenController {
 
     @FXML
+    private JFXButton dd1kButton;
+
+    @FXML
     private JFXButton mm1Button;
 
     @FXML
@@ -22,8 +25,12 @@ public class MainScreenController {
     private JFXButton mmckButton;
 
     @FXML
-    void onDd1kClicked(ActionEvent event) {
+    private void initialize() {
+        dd1kButton.setDisable(true);
+    }
 
+    @FXML
+    void onDd1kClicked(ActionEvent event) {
     }
 
     @FXML

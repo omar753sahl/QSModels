@@ -119,7 +119,7 @@ public class OutputScreenController {
     }
 
     private void hideProgressBar() {
-        progressBarContainer.getChildren().remove(progressBar);
+        progressBar.setVisible(false);
     }
 
     @FXML
