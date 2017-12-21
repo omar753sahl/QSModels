@@ -22,7 +22,7 @@ public abstract class QueueModel {
             try {
                 validateQueueSystemInputs(input);
                 PerformanceMetrics metrics = calculatePerformanceMetrics(input);
-                Thread.sleep(1500);
+//                Thread.sleep(1500); //Stop faking calculations, man. LOL xD (^_^)
                 emitter.onNext(metrics);
                 emitter.onComplete();
             } catch (QueueModelException e) {
